@@ -1,0 +1,15 @@
+C:/Users/ASUS/Downloads/dsd3/ModelSim/Exp_3_simulation/Serial_Comparator_Simulation/serial_bit_comparator.v {1 {vlog -work work C:/Users/ASUS/Downloads/dsd3/ModelSim/Exp_3_simulation/Serial_Comparator_Simulation/serial_bit_comparator.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module serial_bit_comparator
+
+Top level modules:
+	serial_bit_comparator
+
+} {} {}} C:/Users/ASUS/Downloads/dsd3/ModelSim/Exp_3_simulation/Serial_Comparator_Simulation/serial_bit_comparator_tb.v {1 {vlog -work work C:/Users/ASUS/Downloads/dsd3/ModelSim/Exp_3_simulation/Serial_Comparator_Simulation/serial_bit_comparator_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module serial_bit_comparator_tb
+
+Top level modules:
+	serial_bit_comparator_tb
+
+} {} {}}
