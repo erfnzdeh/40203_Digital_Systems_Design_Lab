@@ -1,0 +1,41 @@
+# macOS
+.DS_Store
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+*.minted
+*.listing
+
+# Quartus-generated files
+db/
+incremental_db/
+output_files/
+simulation/
+*.bak
+*.qws
+*.rpt
+*.smsg
+*.summary
+
+# ModelSim-generated files
+work/
+transcript
+vsim.wlf
+modelsim.ini
+
+# Editor/cache files
+.vscode/
+.idea/
+*.swp
+*~
