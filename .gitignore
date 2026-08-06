@@ -39,3 +39,7 @@ modelsim.ini
 .idea/
 *.swp
 *~
+
+# Courseware submission packages
+submissions/*
+!submissions/README.md
