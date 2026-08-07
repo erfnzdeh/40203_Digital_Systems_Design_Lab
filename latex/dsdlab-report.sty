@@ -1,0 +1,106 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{dsdlab-report}[2026/08/07 Shared DSD laboratory report style]
+
+\RequirePackage[left=1in,right=1in,top=1in,bottom=1.1in,footskip=.4in]{geometry}
+\RequirePackage{amsmath,amssymb,mathtools}
+\RequirePackage{graphicx}
+\RequirePackage{float}
+\RequirePackage[figureposition=bottom,tableposition=top,font=small,labelfont=bf]{caption}
+\RequirePackage{listings}
+\RequirePackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{xepersian}
+
+\settextfont[
+  Path=../fonts/,
+  Scale=1.08,
+  BoldFont={XB NiloofarBd.ttf},
+  ItalicFont={XB NiloofarIt.ttf},
+  BoldItalicFont={XB NiloofarBdIt.ttf}
+]{XB Niloofar.ttf}
+
+\linespread{1.5}
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{1.5em}
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{14pt plus 3pt minus 3pt}
+\emergencystretch=2em
+\graphicspath{{figures/}{screenshots/}}
+
+\newcommand{\reportuniversity}{دانشگاه صنعتی شریف}
+\newcommand{\reportdepartment}{دانشکده مهندسی کامپیوتر}
+\newcommand{\reportcourse}{آزمایشگاه طراحی سیستم‌های دیجیتال}
+\newcommand{\reportinstructor}{دکتر علیرضا اجلالی}
+\newcommand{\reportsemester}{سال تحصیلی ۱۴۰۴--۱۴۰۵}
+\newcommand{\reportenglishtitle}{Digital Systems Design Laboratory}
+
+\newcommand{\reportmembers}{%
+  پوریا عرفانزاده & 401110918\\
+  فاطیما تیمارچی & 402105802\\
+  آیه صابری & 402106145%
+}
+
+\newcommand{\reporttitlepage}[2]{%
+  \hypersetup{pageanchor=false}
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \linespread{1.12}\selectfont
+    \begin{center}
+      \vspace*{0.6cm}
+      {\Large\bfseries \reportuniversity\par}
+      \vspace{0.25cm}
+      {\large \reportdepartment\par}
+
+      \vfill
+
+      {\large عنوان گزارش\par}
+      \vspace{0.8cm}
+      {\huge\bfseries گزارش آزمایش #1\par}
+      \vspace{0.45cm}
+      {\LARGE\bfseries #2\par}
+      \vspace{0.9cm}
+      \begin{latin}
+        {\Large\bfseries \reportenglishtitle\par}
+      \end{latin}
+
+      \vfill
+
+      {\large اعضای گروه\par}
+      \vspace{0.4cm}
+      {\large\bfseries
+        \begin{tabular}{rl}
+          \reportmembers
+        \end{tabular}\par
+      }
+
+      \vspace{0.9cm}
+      {\large نام درس\par}
+      \vspace{0.25cm}
+      {\Large\bfseries \reportcourse\par}
+
+      \vspace{0.7cm}
+      {\large استاد درس\par}
+      \vspace{0.25cm}
+      {\Large\bfseries \reportinstructor\par}
+
+      \vspace{0.7cm}
+      {\large\bfseries \reportsemester\par}
+      \vspace*{0.4cm}
+    \end{center}
+  \end{titlepage}
+  \clearpage
+  \hypersetup{pageanchor=true}
+  \pagestyle{plain}
+  \pagenumbering{arabic}
+}
+
+\newcommand{\shot}[2]{%
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{#1}
+    \caption{#2}
+  \end{figure}
+}
+
+\newcommand{\placeholder}{%
+  \textit{این بخش پس از انجام آزمایش تکمیل می‌شود.}%
+}
