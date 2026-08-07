@@ -5,7 +5,13 @@ Place the ZIP file for each completed experiment in this directory.
 Use this naming format:
 
 ```text
-DSD_Lab02_401110918_402105802_402106145.zip
+DSD_Lab_NN_studentid1_name1_lastname1_studentid2_name2_lastname2_....zip
+```
+
+For example:
+
+```text
+DSD_Lab_01_401110918_Pourya_Erfanzadeh_402105802_Fatima_Timarchi_402106145_Ayeh_Saberi.zip
 ```
 
 Before uploading:
