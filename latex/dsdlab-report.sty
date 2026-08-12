@@ -7,8 +7,12 @@
 \RequirePackage{float}
 \RequirePackage[figureposition=bottom,tableposition=top,font=small,labelfont=bf]{caption}
 \RequirePackage{listings}
+\RequirePackage{xcolor}
 \RequirePackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \RequirePackage{xepersian}
+
+\DeclareCaptionType{code}[کد][فهرست کدها]
+\captionsetup[code]{position=bottom}
 
 \settextfont[
   Path=../fonts/,
@@ -97,6 +101,74 @@
     \includegraphics[width=0.95\linewidth]{#1}
     \caption{#2}
   \end{figure}
+}
+
+\newcommand{\shotw}[3]{%
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=#2\linewidth]{#1}
+    \caption{#3}
+  \end{figure}
+}
+
+\definecolor{codeback}{HTML}{F7F7F7}
+\definecolor{coderule}{HTML}{BFBFBF}
+\definecolor{codekey}{HTML}{0B3C8C}
+\definecolor{codecomment}{HTML}{2E7D32}
+\definecolor{codestring}{HTML}{9C4221}
+\definecolor{codenumber}{HTML}{808080}
+
+\lstdefinestyle{dsdcode}{
+  basicstyle=\ttfamily\scriptsize\linespread{1}\selectfont,
+  keywordstyle=\color{codekey}\bfseries,
+  commentstyle=\color{codecomment}\itshape,
+  stringstyle=\color{codestring},
+  numbers=left,
+  firstnumber=1,
+  numberstyle=\ttfamily\tiny\color{codenumber},
+  numbersep=9pt,
+  backgroundcolor=\color{codeback},
+  frame=single,
+  rulecolor=\color{coderule},
+  framesep=5pt,
+  showstringspaces=false,
+  breaklines=true,
+  breakatwhitespace=true,
+  columns=fullflexible,
+  keepspaces=true,
+  tabsize=4,
+  xleftmargin=2.2em,
+  xrightmargin=0.4em,
+  aboveskip=0.9em,
+  belowskip=0.4em,
+}
+
+\lstdefinelanguage{ModelSimDo}{
+  morekeywords={vlib,vmap,vlog,vcom,vsim,add,wave,run,view,quit,restart,force,radix,configure},
+  morecomment=[l]{\#},
+  sensitive=true,
+}
+
+% \vcode[<listings options>]{<file>}{<caption>}
+\newcommand{\vcode}[3][]{%
+  \par\addvspace{0.7em}%
+  \begin{latin}%
+    \lstinputlisting[style=dsdcode,language=Verilog,#1]{#2}%
+  \end{latin}%
+  \par\nobreak
+  \captionof{code}{#3}%
+  \addvspace{0.7em}%
+}
+
+% \docode{<file>}{<caption>}
+\newcommand{\docode}[2]{%
+  \par\addvspace{0.7em}%
+  \begin{latin}%
+    \lstinputlisting[style=dsdcode,language=ModelSimDo,numbers=none]{#1}%
+  \end{latin}%
+  \par\nobreak
+  \captionof{code}{#2}%
+  \addvspace{0.7em}%
 }
 
 \newcommand{\placeholder}{%
