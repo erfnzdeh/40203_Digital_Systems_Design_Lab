@@ -143,9 +143,12 @@
   belowskip=0.4em,
 }
 
-\lstdefinelanguage{ModelSimDo}{
-  morekeywords={vlib,vmap,vlog,vcom,vsim,add,wave,run,view,quit,restart,force,radix,configure},
+\lstdefinelanguage{TclScript}{
+  morekeywords={vlib,vmap,vlog,vcom,vdel,vsim,add,wave,run,view,quit,restart,force,radix,
+    configure,transcript,do,if,else,set,proc,quietly,create_clock,get_ports,
+    derive_clock_uncertainty,set_input_delay,set_output_delay},
   morecomment=[l]{\#},
+  morestring=[b]",
   sensitive=true,
 }
 
@@ -160,14 +163,14 @@
   \addvspace{0.7em}%
 }
 
-% \docode{<file>}{<caption>}
-\newcommand{\docode}[2]{%
+% \docode[<listings options>]{<file>}{<caption>}
+\newcommand{\docode}[3][]{%
   \par\addvspace{0.7em}%
   \begin{latin}%
-    \lstinputlisting[style=dsdcode,language=ModelSimDo,numbers=none]{#1}%
+    \lstinputlisting[style=dsdcode,language=TclScript,numbers=none,#1]{#2}%
   \end{latin}%
   \par\nobreak
-  \captionof{code}{#2}%
+  \captionof{code}{#3}%
   \addvspace{0.7em}%
 }
 
