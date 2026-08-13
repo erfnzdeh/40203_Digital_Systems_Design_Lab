@@ -48,13 +48,23 @@ the repository layout inside a `LaTeX/` folder:
 ```text
 LaTeX/report/main.tex
 LaTeX/report/screenshots/
+LaTeX/report/code/
 LaTeX/latex/dsdlab-report.sty
 LaTeX/fonts/
 ```
 
-Copy only the image directories the document actually references; the empty
-`figures/` directory is not needed. Verify the bundle by running
-`xelatex main.tex` inside `LaTeX/report/` before uploading.
+Reports that typeset their sources as listings pull them from `code/` through
+`\vcode` and `\docode`, so that directory has to travel with `main.tex` or the
+build fails on a missing input. Copy only the image directories the document
+actually references; the empty `figures/` directory is not needed.
+
+Keep the Verilog in `code/` identical to the copies shipped under `Quartus/`
+and `ModelSim/`, so the listings in the report match the files the TA opens.
+Each Quartus project directory should resolve its own `VERILOG_FILE` and
+`SDC_FILE` entries without reaching outside itself.
+
+Verify the bundle by extracting the finished ZIP and running `xelatex main.tex`
+inside its `LaTeX/report/` before uploading.
 
 Generated files in this directory are intentionally ignored by Git. Only this
 README is tracked.
